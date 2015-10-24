@@ -11,4 +11,8 @@ zuul:
       url: http://localhost:8082
     resource:
       url: http://localhost:9000
-      
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/goe_test
+    username: jpsilva
+    password:

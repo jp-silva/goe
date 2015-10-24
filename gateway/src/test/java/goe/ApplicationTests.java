@@ -1,4 +1,4 @@
-package demo;
+package goe;
 
 import static org.junit.Assert.assertEquals;
 
