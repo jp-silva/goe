@@ -3,7 +3,7 @@ angular.module('admin', []).controller('home',
 function($scope, $http) {
 	
 	var computeDefaultTemplate = function(user) {
-		$scope.template = user && user.roles && user.roles.indexOf("ROLE_WRITER")>0 ? "write.html" : "read.html";		
+		$scope.template = user && user.roles && user.roles.indexOf("ROLE_WRITER")>0 ? "/admin/write.html" : "/admin/read.html";
 	}
 
 	$http.get('user').success(function(data) {
@@ -26,7 +26,7 @@ function($scope, $http) {
 		} else if (response.status == 403) {
 			$scope.error = 'Forbidden.';
 		} else {
-			$scope.error = 'Unknown.';			
+			$scope.error = 'Unknown.';
 		}
 		$scope.authenticated = false;
 	});
@@ -42,7 +42,7 @@ function($scope, $http) {
 	}
 	
 	$scope.changes = function() {
-		$scope.template = "changes.html";
+		$scope.template = "admin/changes.html";
 		$http.get('/resource/changes').success(function(data) {
 			$scope.data = data;
 		})
