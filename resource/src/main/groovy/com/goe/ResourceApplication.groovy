@@ -1,4 +1,4 @@
-package demo
+package com.goe
 
 import java.security.Principal
 
@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 
+import com.goe.ResourceApplication;
+
 @Configuration
-@ComponentScan
+@ComponentScan("com.goe.*")
 @EnableAutoConfiguration
 @RestController
 @EnableRedisHttpSession
@@ -56,5 +58,6 @@ class ResourceApplication extends WebSecurityConfigurerAdapter {
 		// We need this to prevent the browser from popping up a dialog on a 401
 		http.httpBasic().disable()
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/**").hasRole("WRITER").anyRequest().authenticated()
+		http.authorizeRequests().antMatchers("/articles").permitAll()
 	}
 }

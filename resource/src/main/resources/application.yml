@@ -1,0 +1,10 @@
+server:
+  port: 9000
+  address: 127.0.0.1
+security:
+  sessions: NEVER
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/goe_test
+    username: jpsilva
+    password:

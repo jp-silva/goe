@@ -7,6 +7,8 @@ import java.security.Principal
 import org.junit.Test
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 
+import com.goe.ResourceApplication;
+
 
 public class ResourceTests {
 	
